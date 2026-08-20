@@ -1,0 +1,52 @@
+media:
+  input: assets/images
+  output: /assets/images
+  rename: safe
+  extensions: [png, jpg, jpeg, webp, gif]
+
+content:
+  - name: courses
+    label: コース解説
+    type: collection
+    path: _courses
+    format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    operations: { create: true, rename: false, delete: false }
+    fields:
+      - { name: title, label: コース名, type: string, required: true }
+      - { name: summary, label: 概要, type: text }
+      - { name: updated, label: 内容確認日, type: date }
+      - { name: body, label: 本文, type: rich-text }
+
+  - name: tips
+    label: Tips
+    type: collection
+    path: _tips
+    format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    operations: { create: true, rename: false, delete: false }
+    fields:
+      - { name: title, label: タイトル, type: string, required: true }
+      - { name: summary, label: 概要, type: text }
+      - { name: updated, label: 内容確認日, type: date }
+      - { name: body, label: 本文, type: rich-text }
+
+  - name: events
+    label: イベント
+    type: collection
+    path: _events
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: create
+    operations: { create: true, rename: false, delete: false }
+    fields:
+      - { name: title, label: イベント名, type: string, required: true }
+      - { name: start_date, label: 開始日, type: date }
+      - { name: end_date, label: 終了日, type: date }
+      - { name: summary, label: 概要, type: text }
+      - { name: body, label: 本文, type: rich-text }
