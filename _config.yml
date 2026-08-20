@@ -1,0 +1,24 @@
+title: "ゲーム攻略情報"
+description: "コース解説・Tips・イベント情報"
+url: "https://ORGNAME.github.io"
+baseurl: ""
+markdown: kramdown
+
+collections:
+  courses:
+    output: true
+    permalink: /courses/:name/
+  tips:
+    output: true
+    permalink: /tips/:name/
+  events:
+    output: true
+    permalink: /events/:name/
+
+defaults:
+  - scope: { path: "", type: courses }
+    values: { layout: article, section: "コース解説" }
+  - scope: { path: "", type: tips }
+    values: { layout: article, section: "Tips" }
+  - scope: { path: "", type: events }
+    values: { layout: article, section: "イベント" }
