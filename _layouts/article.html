@@ -1,10 +1,17 @@
 ---
 layout: default
 ---
-<article>
-  <p>{{ page.section }}</p>
+<article class="game-article">
+  <p class="text-small text-grey-dk-100">{{ page.section }}</p>
   <h1>{{ page.title }}</h1>
-  {% if page.summary %}<p>{{ page.summary }}</p>{% endif %}
-  {% if page.updated %}<p>内容確認日: {{ page.updated }}</p>{% endif %}
+
+  {% if page.summary %}
+  <p class="fs-5 fw-300">{{ page.summary }}</p>
+  {% endif %}
+
+  {% if page.updated %}
+  <p class="text-small text-grey-dk-100">内容確認日: {{ page.updated }}</p>
+  {% endif %}
+
   {{ content }}
 </article>
