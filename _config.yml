@@ -1,8 +1,21 @@
 title: "ゲーム攻略情報"
 description: "コース解説・Tips・イベント情報"
+
 url: "https://ORGNAME.github.io"
 baseurl: ""
-markdown: kramdown
+
+theme: just-the-docs
+color_scheme: light
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  rel_url: true
+  button: false
+  focus_shortcut_key: "k"
 
 collections:
   courses:
@@ -15,10 +28,36 @@ collections:
     output: true
     permalink: /events/:name/
 
+just_the_docs:
+  collections:
+    courses:
+      name: コース解説
+      nav_fold: true
+    tips:
+      name: Tips
+      nav_fold: true
+    events:
+      name: イベント
+      nav_fold: true
+
 defaults:
-  - scope: { path: "", type: courses }
-    values: { layout: article, section: "コース解説" }
-  - scope: { path: "", type: tips }
-    values: { layout: article, section: "Tips" }
-  - scope: { path: "", type: events }
-    values: { layout: article, section: "イベント" }
+  - scope:
+      path: ""
+      type: courses
+    values:
+      layout: article
+      section: "コース解説"
+
+  - scope:
+      path: ""
+      type: tips
+    values:
+      layout: article
+      section: "Tips"
+
+  - scope:
+      path: ""
+      type: events
+    values:
+      layout: article
+      section: "イベント"
